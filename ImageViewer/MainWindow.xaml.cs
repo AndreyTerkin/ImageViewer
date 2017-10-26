@@ -21,40 +21,23 @@ namespace ImageViewer
     /// </summary>
     public partial class MainWindow : Window
     {
-        private FileManager m_fileManager;
-        private ContentManager m_contentManager;
+        private ContentViewModel m_contentViewModel;
+
+        private ContentModel m_contentModel;
 
         public MainWindow()
         {
             InitializeComponent();
-            m_fileManager = new FileManager();
-            m_contentManager = new ContentManager();
-        }
+            m_contentModel = new ContentModel();
+            m_contentViewModel = new ContentViewModel(m_contentModel);
 
-        private void OpenDirectory(object sender, RoutedEventArgs e)
-        {
-            string dirPath = m_fileManager.OpenDirectoryDialog();
-            if (dirPath == null)
-                return;
-
-            m_contentManager.SetContentList(m_fileManager.GetFiles(dirPath, SearchOption.AllDirectories));
-
-            if (m_contentManager.GetContentList().Count > 0)
-                ImageView.Source = m_contentManager.GetContentList()[0].Bitmap;
-            else
-                ImageView.Source = null;
-
-            ImageList.ItemsSource = from contentItem in m_contentManager.GetContentList()
-                                    select contentItem.Name;
-
-            if (m_contentManager.GetContentList().Count > 0)
-                ImageList.SelectedIndex = 0;
+            this.DataContext = m_contentViewModel;
         }
 
         private void ImageList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var listBox = sender as ListBox;
-            ImageView.Source = m_contentManager.GetContentList()[listBox.SelectedIndex].Bitmap;
+            //var listBox = sender as ListBox;
+            //ImageView.Source = m_contentModel.GetContentList()[listBox.SelectedIndex].Bitmap;
         }
     }
 }

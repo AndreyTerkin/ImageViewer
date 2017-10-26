@@ -62,16 +62,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ContentViewModel.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="IContent.cs" />
+    <Compile Include="IContentViewModel.cs" />
     <Compile Include="Image.cs" />
-    <Compile Include="ContentManager.cs" />
+    <Compile Include="ContentModel.cs" />
+    <Compile Include="ItemSelectCommand.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OpenDirectoryCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

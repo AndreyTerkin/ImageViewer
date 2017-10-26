@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ImageViewer
 {
-    class ContentManager
+    class ContentModel
     {
         private List<Image> m_imageCollection;
 
-        public ContentManager()
+        public ContentModel()
         {
             m_imageCollection = new List<Image>();
         }

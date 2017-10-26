@@ -10,13 +10,13 @@ namespace ImageViewer
 {
     class FileManager
     {
-        private string[] m_extensions = { ".png", ".jpg", ".jpeg" };
+        private static string[] m_extensions = { ".png", ".jpg", ".jpeg" };
 
         /// <summary>
         /// Open dialog to choose directory
         /// </summary>
         /// <returns>Directory path</returns>
-        public string OpenDirectoryDialog()
+        public static string OpenDirectoryDialog()
         {
             FolderBrowserDialog dlg = new FolderBrowserDialog();
             if (dlg.ShowDialog().ToString() == "OK")
@@ -26,7 +26,13 @@ namespace ImageViewer
             return null;
         }
 
-        public List<FileInfo> GetFiles(string path, SearchOption mode = SearchOption.TopDirectoryOnly)
+        /// <summary>
+        /// Receive list of files in directory according path
+        /// </summary>
+        /// <param name="path">Path to directory</param>
+        /// <param name="mode">Search mode</param>
+        /// <returns>List of file information</returns>
+        public static List<FileInfo> GetFiles(string path, SearchOption mode = SearchOption.TopDirectoryOnly)
         {
             DirectoryInfo dirInfo = new DirectoryInfo(path);
             var files = dirInfo.EnumerateFiles("*.*", SearchOption.AllDirectories)
