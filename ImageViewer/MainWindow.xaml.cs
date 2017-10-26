@@ -33,11 +33,5 @@ namespace ImageViewer
 
             this.DataContext = m_contentViewModel;
         }
-
-        private void ImageList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //var listBox = sender as ListBox;
-            //ImageView.Source = m_contentModel.GetContentList()[listBox.SelectedIndex].Bitmap;
-        }
     }
 }
