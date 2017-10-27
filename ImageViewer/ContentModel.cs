@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,12 @@ namespace ImageViewer
     class ContentModel
     {
         private IContentFactory m_contentFactory;
-        private List<Content> m_imageCollection;
+        private ObservableCollection<Content> m_imageCollection;
 
         public ContentModel()
         {
             m_contentFactory = new ImageFactory();
-            m_imageCollection = new List<Content>();
+            m_imageCollection = new ObservableCollection<Content>();
         }
 
         public void SetContentList(List<FileInfo> items)
@@ -27,7 +28,7 @@ namespace ImageViewer
             }
         }
 
-        public List<Content> GetContentList()
+        public ObservableCollection<Content> GetContentList()
         {
             return m_imageCollection;
         }

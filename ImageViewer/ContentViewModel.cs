@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Collections.ObjectModel;
 
 namespace ImageViewer
 {
     class ContentViewModel : IContentViewModel
     {
         private ContentModel m_contentModel;
-        private List<Content> m_contentList;
+        private ObservableCollection<Content> m_contentList;
         private Content m_selectedItem;
 
         private readonly ICommand m_openCommand;
@@ -23,7 +24,7 @@ namespace ImageViewer
             m_openCommand = new OpenDirectoryCommand(this);
         }
 
-        public List<Content> ContentList
+        public ObservableCollection<Content> ContentList
         {
             get => m_contentList;
             set
