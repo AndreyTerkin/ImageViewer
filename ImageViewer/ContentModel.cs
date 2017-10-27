@@ -21,7 +21,7 @@ namespace ImageViewer
             m_imageCollection.Clear();
             foreach (var item in items)
             {
-                m_imageCollection.Add(new Image(item.Name, item.Extension, item.FullName));
+                m_imageCollection.Add(new Image(item.Name, item.Extension, item.FullName, item.Length));
             }
         }
 
