@@ -48,11 +48,6 @@ namespace ImageViewer
             get => m_openCommand;
         }
 
-        public int ItemCount
-        {
-            get => m_contentList.Count;
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         public void UpdateItems()

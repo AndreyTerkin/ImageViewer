@@ -9,7 +9,6 @@ namespace ImageViewer
 {
     interface IContentViewModel : INotifyPropertyChanged
     {
-        int ItemCount { get; }
         Image SelectedItem { get; set; }
         void UpdateItems();
     }
