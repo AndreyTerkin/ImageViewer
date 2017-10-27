@@ -12,8 +12,8 @@ namespace ImageViewer
     class ContentViewModel : IContentViewModel
     {
         private ContentModel m_contentModel;
-        private List<Image> m_contentList;
-        private Image m_selectedImage;
+        private List<Content> m_contentList;
+        private Content m_selectedItem;
 
         private readonly ICommand m_openCommand;
 
@@ -23,7 +23,7 @@ namespace ImageViewer
             m_openCommand = new OpenDirectoryCommand(this);
         }
 
-        public List<Image> ContentList
+        public List<Content> ContentList
         {
             get => m_contentList;
             set
@@ -33,12 +33,12 @@ namespace ImageViewer
             }
         }
 
-        public Image SelectedItem
+        public Content SelectedItem
         {
-            get => m_selectedImage;
+            get => m_selectedItem;
             set
             {
-                m_selectedImage = value;
+                m_selectedItem = value;
                 PropertyChanged(this, new PropertyChangedEventArgs("SelectedItem"));
             }
         }

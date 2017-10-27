@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ImageViewer
 {
-    interface IContent
+    interface IContentFactory
     {
+        Content Create(string name, string extension, string fullName, long size);
     }
 }
