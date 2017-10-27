@@ -1,18 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.IO;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Windows.Resources;
 
 namespace ImageViewer
 {
@@ -32,6 +19,12 @@ namespace ImageViewer
             m_contentViewModel = new ContentViewModel(m_contentModel);
 
             this.DataContext = m_contentViewModel;
+        }
+
+        private void ListViewHeader_Click(object sender, RoutedEventArgs e)
+        {
+            GridViewColumnHeader headerClicked = e.OriginalSource as GridViewColumnHeader;
+            m_contentViewModel.SortContentByKey(headerClicked.Content as string);
         }
     }
 }

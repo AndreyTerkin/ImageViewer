@@ -1,10 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Collections.Generic;
+﻿using System.IO;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Collections.ObjectModel;
 
@@ -53,6 +49,9 @@ namespace ImageViewer
 
         public void UpdateItems()
         {
+            if (m_contentModel == null)
+                return;
+
             string dirPath = FileManager.OpenDirectoryDialog();
             if (dirPath == null)
                 return;
@@ -64,6 +63,16 @@ namespace ImageViewer
                 SelectedItem = m_contentModel.GetContentList()[0];
             else
                 SelectedItem = null;
+        }
+
+        public void SortContentByKey(string propertyHeaderName)
+        {
+            if (m_contentModel != null && m_contentModel.SortMap.Keys.Contains(propertyHeaderName))
+            {
+                // TODO: restore selected item
+                m_contentModel.SortMap[propertyHeaderName].Invoke();
+                ContentList = m_contentModel.GetContentList();
+            }
         }
     }
 }

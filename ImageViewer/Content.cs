@@ -12,6 +12,7 @@ namespace ImageViewer
         public string Extension { get; set; }
         public string FullName { get; set; }
         public long Size { get; set; }
+        public int Resolution { get; set; }
 
         public Content(string name, string extension, string fullName, long size)
         {

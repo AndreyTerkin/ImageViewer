@@ -12,7 +12,6 @@ namespace ImageViewer
         public Uri Uri { get; set; }
         public BitmapImage Bitmap { get; set; }
         public string SizeString { get; set; }
-        public int Resolution { get; set; }
         public string ResolutionString { get; set; }
         public string Comment { get; set; }
 
