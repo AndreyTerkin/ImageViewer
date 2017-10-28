@@ -28,8 +28,7 @@
                 Source="{Binding Path=SelectedItem.Bitmap}"/>
         <!--GridSplitter /-->
         <ListView Grid.Row="1" Grid.Column="1" x:Name="ImageList" MinWidth="350" MinHeight="300"
-                  ItemsSource="{Binding Path=ContentList}"
-                  SelectedItem="{Binding Path=SelectedItem}"
+                  ItemsSource="{Binding Path=ContentList}" SelectedItem="{Binding Path=SelectedItem}"
                   GridViewColumnHeader.Click="ListViewHeader_Click" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <ListView.View>
                 <GridView>

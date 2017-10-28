@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ImageViewer
 {
-    class ContentModel
+    class ContentModel : IContentModel, ISortableModel
     {
         private IContentFactory m_contentFactory;
         private ObservableCollection<Content> m_imageCollection;

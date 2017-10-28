@@ -8,13 +8,13 @@ namespace ImageViewer
 {
     class ContentViewModel : IContentViewModel
     {
-        private ContentModel m_contentModel;
+        private IContentModel m_contentModel;
         private ObservableCollection<Content> m_contentList;
         private Content m_selectedItem;
 
         private readonly ICommand m_openCommand;
 
-        public ContentViewModel(ContentModel contentModel)
+        public ContentViewModel(IContentModel contentModel)
         {
             m_contentModel = contentModel;
             m_openCommand = new OpenDirectoryCommand(this);
@@ -67,10 +67,17 @@ namespace ImageViewer
 
         public void SortContentByKey(string propertyHeaderName)
         {
-            if (m_contentModel != null && m_contentModel.SortMap.Keys.Contains(propertyHeaderName))
+            if (m_contentModel == null)
+                return;
+
+            var sortableModel = m_contentModel as ISortableModel;
+            if (sortableModel == null)
+                return;
+
+            if (sortableModel.SortMap.Keys.Contains(propertyHeaderName))
             {
                 // TODO: restore selected item
-                m_contentModel.SortMap[propertyHeaderName].Invoke();
+                (m_contentModel as ISortableModel).SortMap[propertyHeaderName].Invoke();
                 ContentList = m_contentModel.GetContentList();
             }
         }
