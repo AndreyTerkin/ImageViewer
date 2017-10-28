@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace ImageViewer
 {
-    class ContentViewModel : IContentViewModel
+    class ContentViewModel : IContentViewModel, ISortableViewModel
     {
         private IContentModel m_contentModel;
         private ObservableCollection<Content> m_contentList;

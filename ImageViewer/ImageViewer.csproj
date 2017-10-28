@@ -55,8 +55,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ContentModelFactory.cs" />
+    <Compile Include="ContentViewModelFactory.cs" />
     <Compile Include="IContentModel.cs" />
     <Compile Include="ISortableModel.cs" />
+    <Compile Include="ISortableViewModel.cs" />
     <Compile Include="SortExtension.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
