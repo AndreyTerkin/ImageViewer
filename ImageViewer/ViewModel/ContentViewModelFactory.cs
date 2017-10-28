@@ -1,6 +1,7 @@
 ﻿using System;
+using ImageViewer.Model;
 
-namespace ImageViewer
+namespace ImageViewer.ViewModel
 {
     class ContentViewModelFactory
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ImageViewer
+namespace ImageViewer.Model
 {
     interface IContentFactory
     {

@@ -35,8 +35,8 @@
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
             </Grid.RowDefinitions>
-            
-            <TextBox Grid.Row="0" MinHeight="22" Margin="0,0,0,5"></TextBox>
+
+            <TextBox x:Name="SearchBox" Grid.Row="0" MinHeight="22" Margin="0,0,0,5" TextChanged="SearchBox_TextChanged"></TextBox>
             <ListView Grid.Row="1" x:Name="ImageList" MinWidth="340" MinHeight="300" 
                       ItemsSource="{Binding Path=ContentList}" SelectedItem="{Binding Path=SelectedItem}"
                       GridViewColumnHeader.Click="ListViewHeader_Click" ScrollViewer.VerticalScrollBarVisibility="Visible">

@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 
-namespace ImageViewer
+namespace ImageViewer.Model
 {
     class ContentModel : IContentModel, ISortableModel
     {

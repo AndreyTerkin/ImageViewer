@@ -1,5 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using ImageViewer.Model;
+using ImageViewer.ViewModel;
 
 namespace ImageViewer
 {
@@ -33,6 +35,11 @@ namespace ImageViewer
             var sortableViewModel = m_contentViewModel as ISortableViewModel;
             if(sortableViewModel != null)
                 sortableViewModel.SortContentByKey(headerClicked.Content as string);
+        }
+
+        private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

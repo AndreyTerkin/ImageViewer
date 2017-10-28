@@ -54,12 +54,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ContentModelFactory.cs" />
-    <Compile Include="ContentViewModelFactory.cs" />
-    <Compile Include="IContentModel.cs" />
-    <Compile Include="ISortableModel.cs" />
-    <Compile Include="ISortableViewModel.cs" />
-    <Compile Include="SortExtension.cs" />
+    <Compile Include="Model\ContentModelFactory.cs" />
+    <Compile Include="ViewModel\ContentViewModelFactory.cs" />
+    <Compile Include="Model\IContentModel.cs" />
+    <Compile Include="Model\ISortableModel.cs" />
+    <Compile Include="ViewModel\ISortableViewModel.cs" />
+    <Compile Include="Model\SortExtension.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,21 +68,21 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ContentViewModel.cs" />
-    <Compile Include="FileManager.cs" />
-    <Compile Include="Content.cs" />
-    <Compile Include="IContentFactory.cs" />
-    <Compile Include="IContentViewModel.cs" />
-    <Compile Include="Image.cs" />
-    <Compile Include="ContentModel.cs" />
-    <Compile Include="ImageFactory.cs" />
+    <Compile Include="ViewModel\ContentViewModel.cs" />
+    <Compile Include="Model\FileManager.cs" />
+    <Compile Include="Model\Content.cs" />
+    <Compile Include="Model\IContentFactory.cs" />
+    <Compile Include="ViewModel\IContentViewModel.cs" />
+    <Compile Include="Model\Image.cs" />
+    <Compile Include="Model\ContentModel.cs" />
+    <Compile Include="Model\ImageFactory.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OpenDirectoryCommand.cs" />
+    <Compile Include="Model\OpenDirectoryCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

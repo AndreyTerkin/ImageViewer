@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
+using ImageViewer.Model;
 
-namespace ImageViewer
+namespace ImageViewer.ViewModel
 {
     interface IContentViewModel : INotifyPropertyChanged
     {
