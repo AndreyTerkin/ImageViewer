@@ -15,6 +15,7 @@
             <ColumnDefinition Width="350"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
+        <!--Menu-->
         <Menu Grid.Row="0" Grid.ColumnSpan="2">
             <MenuItem x:Name="Menu" Header="File">
                 <MenuItem Header="Open directory" Command="{Binding Path=OpenCommand}" InputGestureText="Ctrl+O"></MenuItem>
@@ -23,22 +24,32 @@
             </MenuItem>
         </Menu>
 
+        <!--Image area-->
         <Image Grid.Row="1" Grid.Column="0" x:Name="ImageView" MinWidth="300" MinHeight="300"
-                HorizontalAlignment="Stretch"
+                HorizontalAlignment="Stretch" Margin="5,5,5,5"
                 Source="{Binding Path=SelectedItem.Bitmap}"/>
-        <!--GridSplitter /-->
-        <ListView Grid.Row="1" Grid.Column="1" x:Name="ImageList" MinWidth="350" MinHeight="300"
-                  ItemsSource="{Binding Path=ContentList}" SelectedItem="{Binding Path=SelectedItem}"
-                  GridViewColumnHeader.Click="ListViewHeader_Click" ScrollViewer.VerticalScrollBarVisibility="Visible">
-            <ListView.View>
-                <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Header="Name" Width="170" DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
-                        <GridViewColumn Header="Size" Width="80" DisplayMemberBinding="{Binding Path=SizeString}"></GridViewColumn>
-                        <GridViewColumn Header="Resolution" Width="85" DisplayMemberBinding="{Binding Path=Resolution}"></GridViewColumn>
-                    </GridView.Columns>
-                </GridView>
-            </ListView.View>
-        </ListView>
+
+        <!--List-->
+        <Grid Grid.Row="1" Grid.Column="1" Margin="5,5,5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <TextBox Grid.Row="0" MinHeight="22" Margin="0,0,0,5"></TextBox>
+            <ListView Grid.Row="1" x:Name="ImageList" MinWidth="340" MinHeight="300" 
+                      ItemsSource="{Binding Path=ContentList}" SelectedItem="{Binding Path=SelectedItem}"
+                      GridViewColumnHeader.Click="ListViewHeader_Click" ScrollViewer.VerticalScrollBarVisibility="Visible">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Name" Width="170" DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
+                            <GridViewColumn Header="Size" Width="70" DisplayMemberBinding="{Binding Path=SizeString}"></GridViewColumn>
+                            <GridViewColumn Header="Resolution" Width="85" DisplayMemberBinding="{Binding Path=Resolution}"></GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
     </Grid>
 </Window>
