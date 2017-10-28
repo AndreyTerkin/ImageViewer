@@ -7,23 +7,35 @@ using ImageViewer.Model;
 
 namespace ImageViewer.ViewModel
 {
-    class ContentViewModel : IContentViewModel, ISortableViewModel
+    class ContentViewModel : IContentViewModel, ISortableViewModel, IFilterableViewModel
     {
         private IContentModel m_contentModel;
         private ObservableCollection<Content> m_contentList;
         private Content m_selectedItem;
+
+        private string m_filterString;
 
         private readonly ICommand m_openCommand;
 
         public ContentViewModel(IContentModel contentModel)
         {
             m_contentModel = contentModel;
+            m_filterString = "";
             m_openCommand = new OpenDirectoryCommand(this);
         }
 
         public ObservableCollection<Content> ContentList
         {
-            get => m_contentList;
+            get
+            {
+                if (m_contentList == null)
+                    return null;
+
+                return new ObservableCollection<Content>(
+                            from item in m_contentList
+                            where item.Name.ToLower().StartsWith(FilterString)
+                            select item);
+            }
             set
             {
                 m_contentList = value;
@@ -80,6 +92,17 @@ namespace ImageViewer.ViewModel
                 // TODO: restore selected item
                 (m_contentModel as ISortableModel).SortMap[propertyHeaderName].Invoke();
                 ContentList = m_contentModel.GetContentList();
+            }
+        }
+
+        // IFilterableViewModel
+        public string FilterString
+        {
+            get => m_filterString;
+            set
+            {
+                m_filterString = value.ToLower();
+                PropertyChanged(this, new PropertyChangedEventArgs("ContentList"));
             }
         }
     }

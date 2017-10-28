@@ -58,6 +58,7 @@
     <Compile Include="ViewModel\ContentViewModelFactory.cs" />
     <Compile Include="Model\IContentModel.cs" />
     <Compile Include="Model\ISortableModel.cs" />
+    <Compile Include="ViewModel\IFilterableViewModel.cs" />
     <Compile Include="ViewModel\ISortableViewModel.cs" />
     <Compile Include="Model\SortExtension.cs" />
     <Page Include="MainWindow.xaml">

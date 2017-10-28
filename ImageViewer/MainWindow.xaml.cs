@@ -33,13 +33,14 @@ namespace ImageViewer
         {
             GridViewColumnHeader headerClicked = e.OriginalSource as GridViewColumnHeader;
             var sortableViewModel = m_contentViewModel as ISortableViewModel;
-            if(sortableViewModel != null)
-                sortableViewModel.SortContentByKey(headerClicked.Content as string);
+            sortableViewModel?.SortContentByKey(headerClicked.Content as string);
         }
 
         private void SearchBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            var filterableViewModel = m_contentViewModel as IFilterableViewModel;
+            if(filterableViewModel != null)
+                filterableViewModel.FilterString = (e.Source as TextBox).Text;
         }
     }
 }
