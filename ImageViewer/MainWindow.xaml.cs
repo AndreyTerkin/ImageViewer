@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using ImageViewer.Model;
 using ImageViewer.ViewModel;
 
@@ -24,7 +25,7 @@ namespace ImageViewer
             m_viewModelFactory = new ContentViewModelFactory();
 
             m_contentModel = m_modelFactory.Create();
-            m_contentViewModel = m_viewModelFactory.Create(m_contentModel);
+            m_contentViewModel = m_viewModelFactory.Create(m_contentModel, new CloseCommand(this));
 
             this.DataContext = m_contentViewModel;
         }

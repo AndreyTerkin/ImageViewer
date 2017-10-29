@@ -16,12 +16,15 @@ namespace ImageViewer.ViewModel
         private string m_filterString;
 
         private readonly ICommand m_openCommand;
+        private readonly ICommand m_closeCommand;
 
-        public ContentViewModel(IContentModel contentModel)
+        public ContentViewModel(IContentModel contentModel, ICommand closeCommand)
         {
             m_contentModel = contentModel;
             m_filterString = "";
+
             m_openCommand = new OpenDirectoryCommand(this);
+            m_closeCommand = closeCommand;
         }
 
         public ObservableCollection<Content> ContentList
@@ -56,6 +59,11 @@ namespace ImageViewer.ViewModel
         public ICommand OpenCommand
         {
             get => m_openCommand;
+        }
+
+        public ICommand CloseCommand
+        {
+            get => m_closeCommand;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
