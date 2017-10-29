@@ -54,7 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\CloseCommand.cs" />
+    <Compile Include="ViewModel\CloseCommand.cs" />
     <Compile Include="Model\ContentModelFactory.cs" />
     <Compile Include="Model\ErrorHandler.cs" />
     <Compile Include="ViewModel\ContentViewModelFactory.cs" />
@@ -85,7 +85,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\OpenDirectoryCommand.cs" />
+    <Compile Include="ViewModel\OpenDirectoryCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

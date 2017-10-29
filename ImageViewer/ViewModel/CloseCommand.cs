@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Input;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace ImageViewer.Model
+namespace ImageViewer.ViewModel
 {
     class CloseCommand : ICommand
     {

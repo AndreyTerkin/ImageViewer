@@ -2,7 +2,7 @@
 using System.Windows.Input;
 using ImageViewer.ViewModel;
 
-namespace ImageViewer.Model
+namespace ImageViewer.ViewModel
 {
     class OpenDirectoryCommand : ICommand
     {
