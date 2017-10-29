@@ -45,7 +45,7 @@
                         <GridView.Columns>
                             <GridViewColumn Header="Name" Width="170" DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
                             <GridViewColumn Header="Size" Width="70" DisplayMemberBinding="{Binding Path=SizeString}"></GridViewColumn>
-                            <GridViewColumn Header="Resolution" Width="85" DisplayMemberBinding="{Binding Path=Resolution}"></GridViewColumn>
+                            <GridViewColumn Header="Resolution" Width="85" DisplayMemberBinding="{Binding Path=ResolutionString}"></GridViewColumn>
                         </GridView.Columns>
                     </GridView>
                 </ListView.View>

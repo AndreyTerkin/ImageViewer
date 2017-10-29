@@ -89,7 +89,6 @@ namespace ImageViewer.ViewModel
 
             if (sortableModel.SortMap.Keys.Contains(propertyHeaderName))
             {
-                // TODO: restore selected item
                 (m_contentModel as ISortableModel).SortMap[propertyHeaderName].Invoke();
                 ContentList = m_contentModel.GetContentList();
             }

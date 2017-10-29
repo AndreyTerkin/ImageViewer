@@ -35,13 +35,23 @@ namespace ImageViewer.Model
         public static List<FileInfo> GetFiles(string path, SearchOption mode = SearchOption.TopDirectoryOnly)
         {
             DirectoryInfo dirInfo = new DirectoryInfo(path);
-            var files = dirInfo.EnumerateFiles("*.*", SearchOption.AllDirectories)
-                .Where(file => m_extensions.Any(ex => ex == file.Extension.ToLower()));
             List<FileInfo> fileList = new List<FileInfo>();
-            foreach (var file in files) // TODO: handle exeption about access to directory
+
+            try
             {
-                fileList.Add(file);
+                var files = dirInfo.EnumerateFiles("*.*", SearchOption.AllDirectories)
+                    .Where(file => m_extensions.Any(ex => ex == file.Extension.ToLower()));
+
+                foreach (var file in files)
+                {
+                    fileList.Add(file);
+                }
             }
+            catch (Exception e)
+            {
+                ErrorHandler.HandleOpenDirectoryError(path);
+            }
+
             return fileList;
         }
     }

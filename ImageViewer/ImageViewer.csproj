@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\ContentModelFactory.cs" />
+    <Compile Include="Model\ErrorHandler.cs" />
     <Compile Include="ViewModel\ContentViewModelFactory.cs" />
     <Compile Include="Model\IContentModel.cs" />
     <Compile Include="Model\ISortableModel.cs" />
