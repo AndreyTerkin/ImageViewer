@@ -43,5 +43,17 @@ namespace ImageViewer
             if(filterableViewModel != null)
                 filterableViewModel.FilterString = (e.Source as TextBox).Text;
         }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            string helpText = "In order to start images viewing open directory with images you want to watch:\n" +
+                              "File->Open Directory\n" +
+                              "Wait for images loading.\n\n" +
+                              "Image list provides sorting functionality. In order to sort list by one of the attribute " +
+                              "click on table header of interested attribute.\n" +
+                              "Also you can search image by its name. Just start to write name and list will be filtered automatically.";
+
+            MessageBox.Show(helpText, "Help", MessageBoxButton.OK);
+        }
     }
 }

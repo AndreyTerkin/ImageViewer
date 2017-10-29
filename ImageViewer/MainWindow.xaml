@@ -23,6 +23,9 @@
                 <Separator></Separator>
                 <MenuItem Header="Exit" Command="{Binding Path=CloseCommand}" InputGestureText="Ctrl+W"></MenuItem>
             </MenuItem>
+            <MenuItem x:Name="HelpMenu" Header="Help">
+                <MenuItem Header="Help" Click="MenuItem_Click" ></MenuItem>
+            </MenuItem>
         </Menu>
 
         <!--Image area-->
