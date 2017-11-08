@@ -97,7 +97,7 @@ namespace ImageViewer.ViewModel
 
             if (sortableModel.SortMap.Keys.Contains(propertyHeaderName))
             {
-                (m_contentModel as ISortableModel).SortMap[propertyHeaderName].Invoke();
+                (m_contentModel as ISortableModel)?.SortMap[propertyHeaderName].Invoke();
                 ContentList = m_contentModel.GetContentList();
             }
         }

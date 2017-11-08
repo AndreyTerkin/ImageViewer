@@ -11,8 +11,8 @@ namespace ImageViewer.Model
     {
         public Uri Uri { get; set; }
         public BitmapImage Bitmap { get; set; }
-        public string SizeString { get; set; }
-        public string ResolutionString { get; set; }
+        public string SizeString { get; set; } // FIXME: dirty hack
+        public string ResolutionString { get; set; } // FIXME: dirty hack
         public string Comment { get; set; }
 
         public Image(string name, string extension, string fullName, long size)
