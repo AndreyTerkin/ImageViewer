@@ -25,4 +25,4 @@ namespace ImageViewer.Model
             ResolutionString = Bitmap.PixelWidth + "x" + Bitmap.PixelHeight;
         }
     }
-}
+}//blablabla
